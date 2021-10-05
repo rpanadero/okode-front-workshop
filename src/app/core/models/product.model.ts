@@ -4,3 +4,5 @@ export interface Product {
     price: number;
     pictureUrl: string;
 }
+
+export type ProductSearchCategory = 'technology' | 'sports';

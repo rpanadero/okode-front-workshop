@@ -3,10 +3,19 @@
 
     <div class="p-pruduct-search">
 
+        <div class="p-pruduct-search__cart-box">
+            <cart-box [products]="cartProducts ?? []"></cart-box>
+        </div>
+
+        <div class="p-pruduct-search__categories">
+            <div class="p-pruduct-search__category" [class.p-pruduct-search__category--selected]="category === 'technology'" (click)="onChangeCategory('technology')">Tecnología</div>
+            <div class="p-pruduct-search__category" [class.p-pruduct-search__category--selected]="category === 'sports'" (click)="onChangeCategory('sports')">Deportes</div>
+        </div>
+
         <input class="p-pruduct-search__search-input" placeholder="Buscar productos" [(ngModel)]="searchTerm">
 
         <div class="p-pruduct-search__grid">
-            <product-search-item [product]="product" *ngFor="let product of products | filterProducts:searchTerm"></product-search-item>
+            <product-search-item [product]="product" *ngFor="let product of products | orderProducts" (addToCart)="onAddToCart($event)"></product-search-item>
         </div>
 
     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/core/models/product.model';
+import { Product, ProductSearchCategory } from 'src/app/core/models/product.model';
 import { ProductHttpService } from 'src/app/core/services/http/product-http.service';
 
 @Component({
@@ -9,8 +9,10 @@ import { ProductHttpService } from 'src/app/core/services/http/product-http.serv
 })
 export class ProductSearchPage implements OnInit {
 
-  products?: Product[];
+  products: Product[] = [];
   searchTerm?: string;
+  category: ProductSearchCategory = 'technology';
+  cartProducts?: Product[];
 
   constructor(
     private productHttpService: ProductHttpService
@@ -20,13 +22,20 @@ export class ProductSearchPage implements OnInit {
     this.loadProducts();
   }
 
+  onChangeCategory(category: ProductSearchCategory) {
+    this.category = category;
+    this.loadProducts();
+  }
+
+  onAddToCart(product: Product) {
+    this.cartProducts ??= [];
+    this.cartProducts.push(product);
+  }
+
   private loadProducts() {
-    this.productHttpService.getProducts().subscribe(res => {
-      this.products = res;
-    }, err => {
-      // TODO: handle error
-      console.log(err);
-    });
+    this.products.splice(0, this.products.length);
+    const products = this.productHttpService.getStaticProductsByCategory(this.category)
+    this.products.push(...products);
   }
 
 }

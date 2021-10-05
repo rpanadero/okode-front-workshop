@@ -27,4 +27,27 @@
             grid-template-columns: repeat(1, 1fr);
         }
     }
+    &__categories {
+        display: flex;
+        margin-bottom: 20px;
+        & > *:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &__category {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        &:hover {
+            cursor: pointer;
+        }
+        &--selected {
+            background: #262626;
+            color: white;
+        }
+    }
+    &__cart-box {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
 }

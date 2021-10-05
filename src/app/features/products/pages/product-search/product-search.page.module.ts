@@ -7,17 +7,21 @@ import { ProductSearchItemComponentModule } from '../../components/product-searc
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FilterProductsPipe } from '../../pipes/filter-products.pipe';
 import { FormsModule } from '@angular/forms';
+import { OrderProductsPipe } from '../../pipes/order-products.pipe';
+import { CartBoxComponentModule } from '../../components/cart-box/cart-box.component.module';
 
 
 @NgModule({
   declarations: [
     ProductSearchPage,
-    FilterProductsPipe
+    FilterProductsPipe,
+    OrderProductsPipe,
   ],
   imports: [
     CommonModule,
     ProductSearchPageRoutingModule,
     ProductSearchItemComponentModule,
+    CartBoxComponentModule,
     SharedModule,
     FormsModule
   ]
