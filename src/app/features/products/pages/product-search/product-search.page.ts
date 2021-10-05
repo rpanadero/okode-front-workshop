@@ -10,6 +10,7 @@ import { ProductHttpService } from 'src/app/core/services/http/product-http.serv
 export class ProductSearchPage implements OnInit {
 
   products?: Product[];
+  searchTerm?: string;
 
   constructor(
     private productHttpService: ProductHttpService

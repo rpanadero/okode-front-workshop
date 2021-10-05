@@ -5,17 +5,21 @@ import { ProductSearchPageRoutingModule } from './product-search-routing.page.mo
 import { ProductSearchPage } from './product-search.page';
 import { ProductSearchItemComponentModule } from '../../components/product-search-item/product-search-item.component.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FilterProductsPipe } from '../../pipes/filter-products.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    ProductSearchPage
+    ProductSearchPage,
+    FilterProductsPipe
   ],
   imports: [
     CommonModule,
     ProductSearchPageRoutingModule,
     ProductSearchItemComponentModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class ProductSearchPageModule { }

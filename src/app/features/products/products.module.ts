@@ -5,7 +5,8 @@ import { ProductsRoutingModule } from './products-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     ProductsRoutingModule
