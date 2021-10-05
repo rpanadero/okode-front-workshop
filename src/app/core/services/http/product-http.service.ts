@@ -9,8 +9,8 @@ export class ProductHttpService {
 
   constructor() { }
 
-  getProducts() {
-    return of<Product[]>([
+  getProducts(query?: string) {
+    const allProducts: Product[] = [
       {
         id: '1341-AB',
         name: 'MacBook Pro',
@@ -35,6 +35,12 @@ export class ProductHttpService {
         pictureUrl: 'https://via.placeholder.com/236x175.png?text=Imagen+1',
         price: 500
       }
-    ]);
+    ];
+    if (!query) { return of(allProducts); }
+    const filteredProducts = allProducts.filter(
+      p => p.name.toLowerCase().includes(query.toLowerCase())
+    );
+    return of(filteredProducts);
   }
+
 }

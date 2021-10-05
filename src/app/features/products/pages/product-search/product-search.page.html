@@ -6,8 +6,10 @@
         <input class="p-pruduct-search__search-input" placeholder="Buscar productos" [(ngModel)]="searchTerm">
 
         <div class="p-pruduct-search__grid">
-            <product-search-item [product]="product" *ngFor="let product of products | filterProducts:searchTerm"></product-search-item>
+            <product-search-item [product]="product" *ngFor="let product of products"></product-search-item>
         </div>
+
+        <div *ngIf="!products?.length" class="p-pruduct-search__no-results">Introduce el nombre del producto que buscas</div>
 
     </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductHttpService } from 'src/app/core/services/http/product-http.service';
 
@@ -7,26 +7,13 @@ import { ProductHttpService } from 'src/app/core/services/http/product-http.serv
   templateUrl: './product-search.page.html',
   styleUrls: ['./product-search.page.scss']
 })
-export class ProductSearchPage implements OnInit {
+export class ProductSearchPage {
 
   products?: Product[];
   searchTerm?: string;
 
   constructor(
-    private productHttpService: ProductHttpService
+    private productHttpService: ProductHttpService // Use this service to get products
   ) { }
-
-  ngOnInit() {
-    this.loadProducts();
-  }
-
-  private loadProducts() {
-    this.productHttpService.getProducts().subscribe(res => {
-      this.products = res;
-    }, err => {
-      // TODO: handle error
-      console.log(err);
-    });
-  }
 
 }
