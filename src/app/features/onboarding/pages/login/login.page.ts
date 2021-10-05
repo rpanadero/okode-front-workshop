@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
     this.loginService.login$(this.email, this.password).subscribe(() => {
       this.navToPrivateArea();
     }, err => {
-      // TODO: show alert
+      // TODO: show error alert
     });
   }
 
