@@ -1,0 +1,21 @@
+.c-main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: hidden;
+    &__header {
+        padding-top: calc(env(safe-area-inset-top) + 20px);
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 1px solid #cecece;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        font-weight: bold;
+    }
+    &__content {
+        padding-top: 40px;
+        padding-bottom: calc(env(safe-area-inset-bottom) + 40px);
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+}

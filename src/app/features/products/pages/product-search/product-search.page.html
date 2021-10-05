@@ -1,0 +1,12 @@
+
+<main-layout [sectionTitle]="'Buscador de productos'">
+
+    <div class="p-pruduct-search">
+
+        <div class="p-pruduct-search__grid">
+            <product-search-item [product]="product" *ngFor="let product of products"></product-search-item>
+        </div>
+
+    </div>
+
+</main-layout>

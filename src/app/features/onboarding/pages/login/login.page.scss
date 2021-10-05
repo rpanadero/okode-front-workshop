@@ -1,0 +1,16 @@
+.p-login {
+    &__form {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 40vh;
+    }
+    &__input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

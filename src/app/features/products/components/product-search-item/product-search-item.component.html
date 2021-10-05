@@ -1,0 +1,6 @@
+<div *ngIf="product" class="c-product">
+    <div class="c-product__image"><img [src]="product.pictureUrl"></div>
+    <div class="c-product__name">{{ product.name }}</div>
+    <div class="c-product__price">{{ product.price | number: '.2' }}€</div>
+    <button routerLink="/checkout">Comprar</button>
+</div>

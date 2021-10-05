@@ -1,0 +1,8 @@
+<form (ngSubmit)="onLogin()">
+    <div class="p-login__form">
+        <input class="p-login__input" name="email" type="text" [(ngModel)]="email" placeholder="Email">
+        <input class="p-login__input" name="password" type="password" [(ngModel)]="password" placeholder="Contraseña">
+        <button type="submit">Iniciar sesión</button>
+    </div>
+</form>
+

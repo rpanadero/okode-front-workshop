@@ -1,0 +1,11 @@
+.p-home {
+    &__welcome-msg {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 32px;
+        flex-wrap: wrap;
+    }
+}
