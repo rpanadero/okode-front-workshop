@@ -3,6 +3,8 @@
 
     <div class="p-pruduct-search">
 
+        <div *ngIf="greetingMessage" class="p-pruduct-search__greeting-message">{{ greetingMessage }}</div>
+
         <input class="p-pruduct-search__search-input" placeholder="Buscar productos" [(ngModel)]="searchTerm">
 
         <div class="p-pruduct-search__grid">
